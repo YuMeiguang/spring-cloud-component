@@ -11,7 +11,7 @@
 
     <groupId>com.ymg.spring</groupId>
     <artifactId>eureka-server</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,5 +29,14 @@
 
     <build>
         <finalName>eureka-server</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

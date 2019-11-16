@@ -11,7 +11,7 @@
 
     <groupId>com.ymg.spring</groupId>
     <artifactId>eureka-consumer</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
 
     <dependencies>
@@ -24,5 +24,14 @@
 
     <build>
         <finalName>eureka-consumer</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

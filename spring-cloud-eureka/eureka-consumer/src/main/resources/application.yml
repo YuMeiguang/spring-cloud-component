@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: eureka-consumer
+  mvc:
+    throw-exception-if-no-handler-found: false
+  resources:
+    add-mappings: false
 eureka:
   client:
     serviceUrl:

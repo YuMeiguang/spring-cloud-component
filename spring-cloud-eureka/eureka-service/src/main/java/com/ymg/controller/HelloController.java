@@ -25,12 +25,14 @@ public class HelloController {
     private String serviceId;
 
     @GetMapping("hello")
-    public String hello(){
-        List<ServiceInstance> serviceInstances = discoveryClient.getInstances(serviceId);
+    public List<String> hello(){
 
         List<String> services = discoveryClient.getServices();
 
-        return services.get(0);
+        List<ServiceInstance> serviceInstances = discoveryClient.getInstances(services.get(0));
+
+
+        return services;
     }
 
 }
