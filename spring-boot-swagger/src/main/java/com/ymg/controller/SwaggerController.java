@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 1.0.0
  **/
 @RestController
+@Slf4j
 @Api(value = "V1",tags = "test",description = "swagger测试类")
 public class SwaggerController {
 
@@ -22,6 +24,15 @@ public class SwaggerController {
     @ResponseBody
     @ApiOperation("请求demo")
     public DemoResponseDTO demoRequest(@RequestBody DemoRequestDTO demoRequestDTO){
+        return new DemoResponseDTO();
+    }
+
+    @PostMapping("/hook")
+    @ResponseBody
+    @ApiOperation("请求hook")
+    public DemoResponseDTO demoRequest(@RequestBody String requestJSON){
+        System.out.println(requestJSON);
+        log.info(requestJSON);
         return new DemoResponseDTO();
     }
 
